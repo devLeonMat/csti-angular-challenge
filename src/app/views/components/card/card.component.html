@@ -1,0 +1,12 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ cardData.nombre }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="row">
+            <div class="col">{{ cardData.precioCatalogo | currency}}</div>
+            <div class="col"><button class="btn btn-success" (click)="addToCart(cardData)">Agregar al Carrito</button></div>
+        </div>
+
+    </mat-card-content>
+</mat-card>

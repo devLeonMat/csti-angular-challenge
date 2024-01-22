@@ -10,11 +10,17 @@ import {CategoryModel} from "../../../../data/schemas/product.model";
 export class StoresComponent implements OnInit {
 
   products: CategoryModel[] = []
+  currentOpt = '';
   constructor(private storeService: StoreService) { }
 
   ngOnInit() {
     this.storeService.getProducts().then(resp=>{
       this.products = resp;
+    })
+    this.storeService.menu$.subscribe({
+      next: (resp)=>{
+        this.currentOpt = resp && resp.value != null ? resp.value : '';
+      }
     })
   }
 

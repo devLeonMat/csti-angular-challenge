@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {CarouselModel} from "../../../data/schemas/carousel.model";
-import {NavigationEnd, Router} from "@angular/router";
-import {filter} from "rxjs/operators";
 import {StoreService} from "../../../data/services/store.service";
 
 @Component({
@@ -11,8 +9,7 @@ import {StoreService} from "../../../data/services/store.service";
 })
 export class CarouselComponent implements OnInit {
 
-  constructor(private router: Router,
-              private storeService: StoreService) {
+  constructor(private storeService: StoreService) {
   }
   currentIndex: number = 0;
   currentOpt = '';

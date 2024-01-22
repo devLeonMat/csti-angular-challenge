@@ -1,3 +1,6 @@
+<div *ngIf="currentOpt!==''">
+
+
 <div class="accordion" *ngFor="let cat of products" >
     <div class="accordion-item">
         <h2 class="accordion-header">
@@ -7,15 +10,13 @@
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <!--<mat-card>
-                    <mat-card-header>
-                        <mat-card-title>{{ cardData.nombre }}</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        {{ cardData.precioCatalogo | currency}}
-                    </mat-card-content>
-                </mat-card>-->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                    <div class="col" *ngFor="let card of cat.listaProductos">
+                        <app-card [cardData]="card"></app-card>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 </div>

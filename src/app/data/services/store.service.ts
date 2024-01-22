@@ -1,7 +1,7 @@
 import {Inject, Injectable} from "@angular/core";
 import {MenuModel} from "../schemas/menu.model";
 import {BehaviorSubject} from "rxjs";
-import {CategoryModel} from "../schemas/product.model";
+import {CategoryModel, ProductModel} from "../schemas/product.model";
 
 
 @Injectable({providedIn: 'root'})
@@ -9,6 +9,8 @@ export class StoreService{
 
     private menuSubject = new BehaviorSubject<MenuModel | null>(null);
     public menu$ = this.menuSubject.asObservable();
+    private productSubject = new BehaviorSubject<ProductModel | null>(null);
+    public product$ = this.productSubject.asObservable();
 
     getMenuOptions(): Promise<MenuModel[]> {
         const jsonData = [
@@ -682,5 +684,4 @@ export class StoreService{
             }, 100);
         });
     }
-
 }
