@@ -1,0 +1,37 @@
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%; /* Ajusta según sea necesario */
+  margin: 0 auto;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 100%;
+
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+  display: block;
+  opacity: 1;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 167px;
+  left: 10px;
+  color: white;
+  font-family: Geometria,sans-serif;
+  font-weight: 500;
+  font-size: 52px;
+  max-width: 640px;
+  line-height: 52px;
+  margin-bottom: 10px;
+
+}

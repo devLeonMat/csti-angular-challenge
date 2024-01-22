@@ -1,0 +1,42 @@
+<header class="bg-light">
+    <div class="container">
+        <div></div>
+        <div class="account-access  d-flex justify-content-end">
+            <span class="pt-2">¡Hola!</span>
+            <button class="btn btn-link" routerLink="/auth">Inicia sesión
+            </button>
+            <span class="pt-2">o</span>
+            <button class="btn btn-link" routerLink="/auth">regístrate</button>
+        </div>
+    </div>
+</header>
+<section class="container pt-2">
+    <div class="row">
+        <div class="col-sm-3">
+            <img (click)="goToHome()" src="../../../../assets/img/new-logo.svg"
+                 alt="" width="200">
+        </div>
+        <div class="col-sm-6">
+            <div>
+                <form [formGroup]="searchFg">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control"
+                               formControlName="searchValue"
+                               placeholder="Encuentra lo mejor en vales, productos y más">
+                        <button class="btn btn-success" type="button" id="button-addon2">
+                            Buscar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-light float-right">
+                <img src="../../../../assets/img/icon/cart-icon.svg" alt="" width="20">
+                <span class="ms-3">Carrito  <span class="text-success fw-bold">{{ cartQuantity }}</span></span>
+            </button>
+        </div>
+    </div>
+</section>
+
+

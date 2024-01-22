@@ -1,0 +1,50 @@
+<div class="mt-5 container">
+    <div class="col-12 d-flex justify-content-center">
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="w-50">
+            <h1>Inicia Sesion</h1>
+            <p>Ahora podrás ingresar a tu cuenta utilizando tu documento de identidad y contraseña de <b>Interbank Benefit.</b></p>
+            <div class="row">
+                <div class="col">
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Tipo de Documento</mat-label>
+                        <mat-select formControlName="documentType">
+                            <mat-option *ngFor="let doc of documentType" value="'{{doc.value}}'">{{ doc.description }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Número de Documento</mat-label>
+                        <input matInput type="text" formControlName="documentNumber" placeholder="Número de Documento">
+                    </mat-form-field>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col">
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput formControlName="password" placeholder="Contraseña"
+                               [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </div>
+            <button class="btn btn-link float-end">¿Olvidaste tu contraseña?</button>
+
+         <button class="btn btn-success w-100 mt-2" (click)="login()">Ingresar</button>
+         <button class="btn btn-light w-100 mt-2" routerLink="/">Retroceder</button>
+            {{ loginForm.getRawValue()|json }}
+
+        </form>
+
+    </div>
+</div>

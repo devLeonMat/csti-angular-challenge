@@ -1,0 +1,21 @@
+<div class="accordion" *ngFor="let cat of products" >
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Categoria:  {{cat.codigo}}
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <!--<mat-card>
+                    <mat-card-header>
+                        <mat-card-title>{{ cardData.nombre }}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        {{ cardData.precioCatalogo | currency}}
+                    </mat-card-content>
+                </mat-card>-->
+            </div>
+        </div>
+    </div>
+</div>

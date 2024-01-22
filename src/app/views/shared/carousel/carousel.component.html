@@ -1,0 +1,9 @@
+
+<div class="carousel-container" *ngIf="currentOpt===''">
+    <div *ngFor="let image of images; let i = index"
+         class="carousel-item" [class.active]="i === currentIndex">
+        <div class="image-text">{{ image.description }}</div>
+        <img [src]="image.url"
+             alt="Carousel Image">
+    </div>
+</div>

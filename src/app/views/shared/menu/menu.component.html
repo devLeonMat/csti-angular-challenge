@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto" *ngFor="let opt of menuOptions ">
+                <li class="nav-item">
+                    <a class="nav-link" (click)="activeOption(opt)" >{{opt.description}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
