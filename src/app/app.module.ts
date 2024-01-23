@@ -7,6 +7,7 @@ import {SharedModule} from "./views/shared/shared.module";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {ComponentsModule} from "./views/components/components.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
     declarations: [
@@ -15,6 +16,7 @@ import {ComponentsModule} from "./views/components/components.module";
     imports: [
         BrowserModule,
         AppRoutingModule,
+        HttpClientModule,
         BrowserAnimationsModule,
         ComponentsModule
     ],
